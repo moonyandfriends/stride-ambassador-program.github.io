@@ -3,21 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stride Ambassador Program</title>
+    <title>Stride Ambassador Program - Join the Future of Cosmos DeFi | Stride</title>
+    <meta name="description" content="Join the Stride Ambassador Program and help shape the future of DeFi in the Cosmos ecosystem. Apply now to become a community leader and represent Stride's liquid staking protocol.">
+    <meta name="keywords" content="Stride, ambassador program, Cosmos, DeFi, liquid staking, blockchain, cryptocurrency, community, STRD token">
+    <meta name="author" content="Stride Labs">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://stride-ambassador-program.github.io/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://stride-ambassador-program.github.io/">
+    <meta property="og:title" content="Stride Ambassador Program - Join the Future of Cosmos DeFi">
+    <meta property="og:description" content="Join the Stride Ambassador Program and help shape the future of DeFi in the Cosmos ecosystem. Apply now to become a community leader.">
+    <meta property="og:image" content="https://stride-ambassador-program.github.io/static/banner.png">
+    <meta property="og:site_name" content="Stride">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://stride-ambassador-program.github.io/">
+    <meta property="twitter:title" content="Stride Ambassador Program - Join the Future of Cosmos DeFi">
+    <meta property="twitter:description" content="Join the Stride Ambassador Program and help shape the future of DeFi in the Cosmos ecosystem. Apply now to become a community leader.">
+    <meta property="twitter:image" content="https://stride-ambassador-program.github.io/static/banner.png">
+    <meta property="twitter:site" content="@stride_zone">
+    
     <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Stride Ambassador Program",
+        "description": "Join the Stride Ambassador Program and help shape the future of DeFi in the Cosmos ecosystem. Apply now to become a community leader and represent Stride's liquid staking protocol.",
+        "url": "https://stride-ambassador-program.github.io/",
+        "inLanguage": "en-US",
+        "mainEntity": {
+            "@type": "Organization",
+            "name": "Stride Labs",
+            "description": "Stride is a liquid staking protocol and DEX in the Cosmos ecosystem",
+            "url": "https://stride.zone",
+            "logo": "https://stride-ambassador-program.github.io/static/banner.png",
+            "sameAs": [
+                "https://twitter.com/stride_zone",
+                "https://discord.gg/stride",
+                "https://t.me/stride_zone"
+            ]
+        },
+        "about": {
+            "@type": "Thing",
+            "name": "Ambassador Program",
+            "description": "A community leadership program for passionate individuals to represent Stride and shape the future of DeFi in Cosmos"
+        },
+        "keywords": "Stride, ambassador program, Cosmos, DeFi, liquid staking, blockchain, cryptocurrency, community, STRD token",
+        "author": {
+            "@type": "Organization",
+            "name": "Stride Labs"
+        }
+    }
+    </script>
+    
     <style>
         :root {
             --primary: #e50571;
+            --primary-light: #ff1a7a;
+            --primary-dark: #c40560;
             --dark: #3c001d;
             --text: #37352F;
             --light-bg: #f9f9f9;
             --white: #ffffff;
             --border: #e9e9e7;
             --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --gradient-primary: linear-gradient(135deg, #e50571 0%, #ff1a7a 100%);
+            --gradient-dark: linear-gradient(135deg, #3c001d 0%, #5c0032 100%);
+            --gradient-light: linear-gradient(135deg, #f9f9f9 0%, #ffffff 100%);
         }
         
         * {
@@ -30,6 +92,12 @@
             font-family: 'Inter', sans-serif;
             color: var(--text);
             line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
         }
         
         .container {
@@ -38,96 +106,132 @@
             padding: 0 20px;
         }
         
-        /* Header */
-        header {
-            background-color: var(--white);
-            padding: 20px 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-        
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            height: 40px;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 24px;
-        }
-        
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text);
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        .nav-links a:hover {
-            color: var(--primary);
-        }
         
         .primary-button, .secondary-button {
-            background-color: var(--primary);
+            background: var(--gradient-primary);
             color: var(--white);
             border: none;
-            padding: 10px 20px;
+            padding: 12px 24px;
             border-radius: 50px;
-            font-weight: 500;
+            font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             text-decoration: none;
             display: inline-block;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(229, 5, 113, 0.3);
+        }
+        
+        .primary-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .primary-button:hover::before {
+            left: 100%;
         }
         
         .primary-button:hover {
-            background-color: #d00063;
-            transform: translateY(-2px);
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(229, 5, 113, 0.4);
         }
         
         /* Hero Section */
         .hero {
-            padding-top: 120px;
-            padding-bottom: 60px;
+            padding-top: 50px;
+            padding-bottom: 50px;
             position: relative;
-            background-color: #fbf5f6;
+            background: linear-gradient(135deg, #fbf5f6 0%, #f8f0f2 50%, #f5eaf0 100%);
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(229, 5, 113, 0.08) 0%, transparent 70%);
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
         }
         
         .hero-content {
             display: flex;
             align-items: center;
-            gap: 40px;
+            gap: 60px;
+            position: relative;
+            z-index: 1;
         }
         
         .hero-text {
             flex: 1;
+            animation: slideInLeft 0.8s ease-out;
         }
         
         .hero-image {
             flex: 1;
             text-align: center;
+            animation: slideInRight 0.8s ease-out;
         }
         
         .hero-image img {
             max-width: 100%;
             height: auto;
-            border-radius: 10px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .hero-image img:hover {
+            transform: scale(1.05);
+        }
+        
+        @keyframes slideInLeft {
+            from { 
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes slideInRight {
+            from { 
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
         
         h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: var(--dark);
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 24px;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             line-height: 1.2;
+            letter-spacing: -0.02em;
         }
         
         .subtitle {
@@ -138,12 +242,12 @@
         
         /* Program Overview */
         .overview {
-            padding: 80px 0;
+            padding: 50px 0;
         }
         
         .section-title {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
         }
         
         .section-title h2 {
@@ -162,20 +266,40 @@
         .categories {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+            gap: 25px;
+            margin-top: 30px;
         }
         
         .category-card {
-            background-color: var(--white);
-            border-radius: 10px;
+            background: var(--gradient-light);
+            border-radius: 20px;
             padding: 30px;
-            box-shadow: var(--box-shadow);
-            transition: transform 0.3s;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 1px solid rgba(229, 5, 113, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .category-card:hover::before {
+            transform: scaleX(1);
         }
         
         .category-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(229, 5, 113, 0.15);
         }
         
         .category-card h3 {
@@ -189,22 +313,34 @@
         }
         
         .icon {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+            font-size: 3rem;
+            margin-bottom: 24px;
             color: var(--primary);
+            display: block;
+            text-align: center;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            transition: transform 0.3s ease;
+            filter: drop-shadow(0 4px 8px rgba(229, 5, 113, 0.3));
+        }
+        
+        .category-card:hover .icon {
+            transform: scale(1.1);
         }
         
         /* Incentives */
         .incentives {
-            padding: 80px 0;
+            padding: 50px 0;
             background-color: var(--light-bg);
         }
         
         .incentives-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+            gap: 25px;
+            margin-top: 30px;
         }
         
         .incentive-item {
@@ -222,39 +358,83 @@
         
         /* How to Join */
         .join {
-            padding: 80px 0;
+            padding: 50px 0;
         }
         
         .steps {
-            margin-top: 40px;
+            margin-top: 30px;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 25px;
         }
         
         .step-card {
-            background-color: var(--white);
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: var(--box-shadow);
+            background: var(--gradient-light);
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 1px solid rgba(229, 5, 113, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .step-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .step-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .step-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(229, 5, 113, 0.15);
+        }
+        
+        .step-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+            font-weight: 700;
+        }
+        
+        .step-card p {
+            color: #555;
+            line-height: 1.6;
         }
         
         .step-number {
-            width: 50px;
-            height: 50px;
-            background-color: var(--primary);
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
             color: var(--white);
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 20px;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 20px rgba(229, 5, 113, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .step-card:hover .step-number {
+            transform: scale(1.1);
+            box-shadow: 0 12px 30px rgba(229, 5, 113, 0.4);
         }
         
         /* Community Spotlight */
@@ -264,55 +444,101 @@
         }
         
         .cta {
-            padding: 80px 0;
+            padding: 0px 0 50px 0;
             text-align: center;
         }
         
         .cta-box {
-            background-color: var(--primary);
-            padding: 60px;
-            border-radius: 10px;
+            background: var(--gradient-primary);
+            padding: 60px 40px;
+            border-radius: 30px;
             color: var(--white);
             margin-top: 40px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(229, 5, 113, 0.3);
+        }
+        
+        .cta-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            animation: rotate 15s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
         
         .cta-box h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+            font-size: 3rem;
+            margin-bottom: 24px;
+            position: relative;
+            z-index: 1;
+            font-weight: 800;
         }
         
         .cta-box p {
-            margin-bottom: 30px;
-            font-size: 1.2rem;
-            max-width: 600px;
+            margin-bottom: 40px;
+            font-size: 1.3rem;
+            max-width: 700px;
             margin-left: auto;
             margin-right: auto;
+            position: relative;
+            z-index: 1;
+            opacity: 0.95;
         }
         
         .secondary-button {
             background-color: var(--white);
-            color: var(--primary);
-            border: none;
-            padding: 12px 30px;
+            color: var(--white);
+            border: 2px solid var(--white);
+            padding: 16px 40px;
             border-radius: 50px;
-            font-weight: 500;
+            font-weight: 700;
             cursor: pointer;
-            transition: all 0.3s;
-            font-size: 1.1rem;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            font-size: 1.2rem;
             text-decoration: none;
             display: inline-block;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            background: transparent;
         }
         
         .secondary-button:hover {
-            background-color: rgba(255, 255, 255, 0.9);
-            transform: translateY(-2px);
+            background-color: transparent;
+            color: var(--white);
+            border-color: var(--white);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(255, 255, 255, 0.4);
         }
         
         /* Footer */
         footer {
-            background-color: var(--dark);
+            background: var(--gradient-dark);
             color: var(--white);
-            padding: 60px 0 30px;
+            padding: 80px 0 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
         }
         
         .footer-content {
@@ -389,56 +615,96 @@
             margin-bottom: 10px;
         }
         
+        /* Scroll to top button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--gradient-primary);
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(229, 5, 113, 0.3);
+        }
+        
+        .scroll-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(229, 5, 113, 0.4);
+        }
+        
+        /* Enhanced text selection */
+        ::selection {
+            background-color: rgba(229, 5, 113, 0.2);
+            color: var(--dark);
+        }
+        
+        ::-moz-selection {
+            background-color: rgba(229, 5, 113, 0.2);
+            color: var(--dark);
+        }
+        
         /* Responsive */
         @media (max-width: 768px) {
             .hero-content {
                 flex-direction: column;
+                gap: 40px;
             }
             
             h1 {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
             }
             
             .section-title h2 {
                 font-size: 2rem;
             }
             
-            .nav-links {
-                display: none;
-            }
             
             .cta-box {
-                padding: 40px 20px;
+                padding: 60px 30px;
             }
             
             .cta-box h2 {
-                font-size: 1.8rem;
+                font-size: 2rem;
+            }
+            
+            .categories {
+                grid-template-columns: 1fr;
+            }
+            
+            .category-card {
+                padding: 30px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container header-container">
-            <img src="/static/logo.png" alt="Stride Logo" class="logo">
-            <a href="https://app.stride.zone/" class="primary-button" target="_blank">Go to Stride App</a>
-        </div>
-    </header>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <header class="hero">
         <div class="container hero-content">
             <div class="hero-text">
-                <h1>Become a Stride Ambassador</h1>
+                <h1>Stride Ambassador Program</h1>
                 <p class="subtitle">Join our vibrant community and help shape the future of Stride in the Cosmos ecosystem and beyond.</p>
-                <a href="https://forms.gle/GvwcuY5bZ4EHrUPv5" class="primary-button" target="_blank">Apply Now</a>
+                <a href="https://forms.gle/GvwcuY5bZ4EHrUPv5" class="primary-button" target="_blank" rel="noopener" aria-label="Apply to become a Stride Ambassador">Apply Now</a>
             </div>
             <div class="hero-image">
-                <img src="/static/banner.png" alt="Stride Ambassador Program Illustration">
+                <img src="/static/banner.png" alt="Stride Ambassador Program - Community members collaborating in the Cosmos DeFi ecosystem">
             </div>
         </div>
-    </section>
+    </header>
 
     <!-- Program Overview -->
     <section class="overview" id="overview">
@@ -452,25 +718,25 @@
                 <div class="category-card">
                     <div class="icon">🌟</div>
                     <h3>Community Leadership</h3>
-                    <p>Maintain a trusted presence within the Stride online community by embodying thought leadership, participating in quality discussions, and initiating educational threads across various platforms.</p>
+                    <p>Establish yourself as a trusted voice within the Stride community by demonstrating thought leadership, engaging in meaningful discussions, and creating educational content across various platforms.</p>
                 </div>
                 
                 <div class="category-card">
                     <div class="icon">🔊</div>
-                    <h3>Social Media Interaction</h3>
-                    <p>Be a driving force in the Cosmos social media atmosphere, providing valuable input on active discussions and deploying brand-consistent messaging to strengthen Stride's influence.</p>
+                    <h3>Social Media Engagement</h3>
+                    <p>Drive meaningful conversations in the Cosmos social media ecosystem by contributing valuable insights to discussions and sharing brand-consistent messaging that strengthens Stride's presence and influence.</p>
                 </div>
                 
                 <div class="category-card">
                     <div class="icon">🚀</div>
                     <h3>Program Development</h3>
-                    <p>Help shape the Ambassador Program itself by contributing to discussions about its development, evaluating potential community members, and assisting in onboarding new ambassadors.</p>
+                    <p>Contribute to program evolution through strategic discussions, member evaluation, and onboarding new ambassadors.</p>
                 </div>
             </div>
             
             <div class="tips-box">
-                <h3>Important Tips</h3>
-                <p>When representing Stride, focus on creating organic, thoughtful content. Avoid spammy posts, one-word comments, generic promotional content without substance, and unprofessional language. Quality engagement matters more than quantity!</p>
+                <h3>Ambassador Guidelines</h3>
+                <p>When representing Stride, focus on creating authentic, thoughtful content that adds value to discussions. Avoid spam, low-effort comments, generic promotional material, and unprofessional language. Remember: quality engagement always outweighs quantity.</p>
             </div>
         </div>
     </section>
@@ -479,33 +745,33 @@
     <section class="incentives" id="incentives">
         <div class="container">
             <div class="section-title">
-                <h2>Incentives</h2>
-                <p>As a Stride Ambassador, you'll receive exclusive benefits that recognize your commitment to our community.</p>
+                <h2>Ambassador Benefits</h2>
+                <p>As a Stride Ambassador, you'll gain access to exclusive benefits and opportunities that recognize your valuable contributions to our community.</p>
             </div>
             
             <div class="incentives-container">
                 <div class="incentive-item">
                     <div class="icon">🤝</div>
                     <h3>Core Team Access</h3>
-                    <p>Unique engagement opportunities to work closely with the core Stride team</p>
+                    <p>Exclusive opportunities to collaborate directly with the Stride core team on strategic initiatives and product development</p>
                 </div>
                 
                 <div class="incentive-item">
                     <div class="icon">🏆</div>
-                    <h3>Exclusive Roles</h3>
-                    <p>Special roles and privileges in our social channels to celebrate your contributions</p>
+                    <h3>Special Recognition</h3>
+                    <p>Distinguished roles and privileges across our community channels that highlight your ambassador status and contributions</p>
                 </div>
                 
                 <div class="incentive-item">
                     <div class="icon">👕</div>
-                    <h3>Stride Merch</h3>
-                    <p>Access to exclusive Stride merchandise available only to ambassadors</p>
+                    <h3>Exclusive Merchandise</h3>
+                    <p>Access to limited-edition Stride merchandise and swag available exclusively to our ambassador community</p>
                 </div>
                 
                 <div class="incentive-item">
                     <div class="icon">💼</div>
-                    <h3>Growth Opportunities</h3>
-                    <p>Create new growth opportunities for yourself and the community</p>
+                    <h3>Career Growth</h3>
+                    <p>Unlock networking opportunities, skill development, and career pathways in the growing DeFi and blockchain space</p>
                 </div>
             </div>
         </div>
@@ -516,84 +782,95 @@
         <div class="container">
             <div class="section-title">
                 <h2>How to Join</h2>
-                <p>We're looking for passionate individuals who want to support Stride in shaping the future of DeFi in Cosmos.</p>
+                <p>We're seeking passionate individuals who want to champion Stride and help shape the future of DeFi in the Cosmos ecosystem.</p>
             </div>
             
             <div class="steps">
                 <div class="step-card">
                     <div class="step-number">1</div>
-                    <h3>Be Active & Stand Out</h3>
-                    <p>Participate actively in Stride's community channels. If you stand out, we'll reach out to you!</p>
+                    <h3>Engage & Excel</h3>
+                    <p>Actively participate in Stride's community channels with meaningful contributions. Outstanding community members get noticed by our team!</p>
                 </div>
                 
                 <div class="step-card">
                     <div class="step-number">2</div>
                     <h3>Connect With Us</h3>
-                    <p>Join Discord and Twitter, and reach out in the #off-topic channel or tweet to the Stride Community account.</p>
+                    <p>Join our Discord and Telegram communities, engage with us on X, and reach out directly to the Stride team to express your interest in becoming an ambassador!</p>
                 </div>
                 
                 <div class="step-card">
                     <div class="step-number">3</div>
-                    <h3>Complete the Form</h3>
-                    <p>After connecting, complete the Ambassador Contact Form with your information, social media handles, and time zone.</p>
+                    <h3>Apply</h3>
+                    <p>Submit your ambassador application using the form below. Include your information, social handles, and tell us why you're excited to represent Stride!</p>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- CTA placeholder - removed Community Spotlight and Stride Channels sections -->
-
 
     <!-- CTA -->
     <section class="cta">
         <div class="container">
             <div class="cta-box">
                 <h2>Ready to Make an Impact?</h2>
-                <p>Join the Stride Ambassador Program today and help shape the future of DeFi in the Cosmos ecosystem!</p>
-                <a href="https://forms.gle/GvwcuY5bZ4EHrUPv5" class="secondary-button" target="_blank">Apply Now</a>
+                <p>Join the Stride Ambassador Program today and help shape the future of Cosmos DeFi through our liquid staking protocol and upcoming DEX platform!</p>
+                <a href="https://forms.gle/GvwcuY5bZ4EHrUPv5" class="secondary-button" target="_blank" rel="noopener" aria-label="Apply to join the Stride Ambassador Program">Apply Now</a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>Stride</h3>
-                    <ul>
-                        <li><a href="https://stride.zone" target="_blank">Home</a></li>
-                        <li><a href="https://app.stride.zone/" target="_blank">App</a></li>
-                        <li><a href="https://stats.stride.zone/" target="_blank">Stats</a></li>
-                        <li><a href="https://stride.zone/blog/security-at-stride" target="_blank">Security</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Resources</h3>
-                    <ul>
-                        <li><a href="https://docs.stride.zone/" target="_blank">Documentation</a></li>
-                        <li><a href="https://github.com/Stride-Labs/stride" target="_blank">GitHub</a></li>
-                        <li><a href="https://www.stride.zone/#faq" target="_blank">FAQ</a></li>
-                        <li><a href="https://support.stride.zone" target="_blank">Support Lab</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Community</h3>
-                    <ul>
-                        <li><a href="https://twitter.com/stride_zone" target="_blank">Twitter</a></li>
-                        <li><a href="https://discord.gg/stride-zone/" target="_blank">Discord</a></li>
-                        <li><a href="https://t.me/stride_zone_official" target="_blank">Telegram</a></li>
-                        <li><a href="https://www.reddit.com/r/Stride_Zone" target="_blank">Reddit</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="copyright">
-                <p>© 2025 Stride Labs. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    
+    <!-- Scroll to top button -->
+    <button class="scroll-to-top" id="scrollToTop">↑</button>
+    
+    <script>
+        // Scroll to top functionality
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('show');
+            } else {
+                scrollToTopBtn.classList.remove('show');
+            }
+        });
+        
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Add intersection observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe cards for animation
+        document.querySelectorAll('.category-card, .incentive-item, .step-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'all 0.6s ease';
+            observer.observe(card);
+        });
+        
+        // Add loading animation
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '1';
+        });
+        
+        document.body.style.opacity = '0';
+        document.body.style.transition = 'opacity 0.3s ease';
+    </script>
 </body>
 </html>
